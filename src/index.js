@@ -7,7 +7,15 @@ import connectDB from "./db/index.js";
 // config({
 //   path: "./.env",
 // });
-connectDB();
+connectDB()
+  .then(() => {
+    app.listen(process.env.PORT || 8000, () => {
+      console.log(`Server is running at port `);
+    });
+  })
+  .catch((err) => {
+    console.log("MongoDb connection failed !!!", err);
+  });
 
 // import express from "express";
 
