@@ -3,14 +3,17 @@
 
 import "dotenv/config"; // Or require('dotenv').config() for older CommonJS modules
 // import { config } from "dotenv";
+import { app } from "./app.js";
 import connectDB from "./db/index.js";
+import express from "express";
+//const app = express();
 // config({
 //   path: "./.env",
 // });
 connectDB()
   .then(() => {
     app.listen(process.env.PORT || 8000, () => {
-      console.log(`Server is running at port `);
+      console.log(`Server is running at port ${process.env.PORT}`);
     });
   })
   .catch((err) => {
