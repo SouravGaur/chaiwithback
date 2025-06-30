@@ -221,4 +221,8 @@ const refreshAccessToken = asynchandler(async (req, res) => {
   }
 });
 
+changeCurrentPassword = asynchandler(async (req, res) => {
+  const { _id, userna };
+});
+
 export { registerUser, loginUser, logoutUser, refreshAccessToken };
