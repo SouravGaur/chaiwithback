@@ -23,7 +23,7 @@ export const verifyJWT = asynchandler(async (req, res, next) => {
     const user = await User.findById(decodedToken?._id).select(
       "-password -refreshToken"
     );
-    console.log("usre under auth", user);
+    // console.log("usre under auth", user);
 
     if (!user) {
       //dicuss about frontend

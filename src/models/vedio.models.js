@@ -19,11 +19,11 @@ const vedioSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-    decription: {
+    description: {
       type: String,
       required: true,
     },
-    duuration: {
+    duration: {
       type: Number, //cloudnary se milega
       required: true,
     },
@@ -40,5 +40,5 @@ const vedioSchema = new mongoose.Schema(
   },
   { timestamps: true }
 );
-vedioSchema.piugin(mongooseAggregatePaginate);
-export const vedio = mongoose.model("Vedio", vedioSchema);
+vedioSchema.plugin(mongooseAggregatePaginate);
+export const Vedio = mongoose.model("Vedio", vedioSchema);
